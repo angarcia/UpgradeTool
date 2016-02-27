@@ -1,0 +1,40 @@
+{
+  "name": "AnaUpgradeToolng2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "postinstall": "npm run typings install",
+    "typings": "typings",
+    "tsc": "tsc",
+    "build": "npm run frontend && tsc && gulp electron",
+    "frontend": "gulp frontend && tsc",
+    "serve": "live-server dist/frontend/",
+    "apps": "npm run build && gulp apps",
+    "start": "npm run build && gulp start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "electron-prebuilt": "^0.36.9",
+    "gulp": "^3.9.1",
+    "gulp-atom-electron": "^1.4.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-symdest": "^1.0.0",
+    "live-server": "^0.9.2",
+    "run-sequence": "^1.1.5",
+    "typescript": "^1.8.2",
+    "typings": "^0.6.8"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.6",
+    "systemjs": "0.19.20",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.14"
+  }
+}
