@@ -1,14 +1,20 @@
 <html>
   <head>
     <title>ng2 on electron</title>
-    <!-- Bootstrap -->
+    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template
+    <link href="css/cover.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif] <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
   </head>
   <body>
     <AnaUpgradeToolng2>Loading Angular2 sample app...</AnaUpgradeToolng2>
@@ -20,21 +26,25 @@
     <script src="scripts/vendor/Rx.js"></script>
     <script src="scripts/vendor/angular2.dev.js"></script>
     <script>
-        System.config({
+      System.config({
 
-            packages: {
-                'app': {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('app/boot')
-                .then(null, console.error.bind(console));
+        packages: {
+          'app': {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import ('app/boot').then(null, console.error.bind(console));
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script> window.$ = window.jQuery = require('./scripts/vendor/jquery.min.js')</script>
+    <script>
+      window.$ = window.jQuery = require('./scripts/vendor/jquery.min.js')
+    </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="scripts/vendor/bootstrap.min.js"></script>
-  </body>
+
+  </script>
+</body>
 </html>

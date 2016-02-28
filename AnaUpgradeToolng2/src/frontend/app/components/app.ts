@@ -1,10 +1,13 @@
-import {Component} from 'angular2/core';
+import {Component, View} from 'angular2/core';
+
 @Component({
-  selector: 'AnaUpgradeToolng2',
-  template: `<h3>{{caption}}
-  <button type="button" class="btn btn-lg btn-primary">Primary</button>
-  </h3>`
+  selector: 'AnaUpgradeToolng2'
 })
+
+@View({
+  templateUrl: 'app/components/app.html'
+})
+
 export class AppComponent{
   private caption: string = "Hello from ng2.";
 }

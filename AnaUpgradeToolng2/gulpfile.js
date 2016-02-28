@@ -24,6 +24,7 @@ gulp.task('copy:vendor', function(){
 gulp.task('copy:css', function(){
     return gulp.src([
             "node_modules/bootstrap/dist/css/bootstrap.min.css",
+            './src/frontend/css/*.css'
         ])
         .pipe(gulp.dest('./dist/frontend/css'))
 })
@@ -33,8 +34,13 @@ gulp.task('copy:index', function(){
         .pipe(gulp.dest('./dist/frontend'));
 });
 
+gulp.task('copy:html', function(){
+    return gulp.src('./src/frontend/app/components/*.html')
+        .pipe(gulp.dest('./dist/frontend/app/components'));
+});
+
 gulp.task('frontend', function(done){
-    return runSeq('clean', ['copy:vendor', 'copy:css', 'copy:index'], done);
+    return runSeq('clean', ['copy:vendor', 'copy:css', 'copy:index', 'copy:html'], done);
 })
 
 gulp.task('clean-electron', function(){
